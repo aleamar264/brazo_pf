@@ -1,0 +1,32 @@
+brazo_PF:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+
+  # Position Controllers ---------------------------------------
+ 
+  joint_ante_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Joint_Ante
+    pid: {p: 1.0, i: 0.1, d: 0.01}
+  Joint_Cabe_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Joint_Cabe
+    pid: {p: 1.0, i: 0.1, d: 0.01}
+  Joint_brazo_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Joint_giro_brazo
+    pid: {p: 1.0, i: 0.10, d: 0.01}
+  Joint_Giro_Muneca_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Joint_muneca
+    pid: {p: 1.0, i: 0.10, d: 0.01}
+  Joint_Mano_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Joint_mano
+    pid: {p: 1.0, i: 0.10, d: 0.01}
+  joint_giro_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Joint_giro
+    pid: {p: 1.0, i: 0.10, d: 0.01}
